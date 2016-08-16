@@ -1,5 +1,7 @@
 'use strict';
 
+const konva = require('konva');
+
 const HEX_RADIUS = 52;
 const STROKE_WIDTH = 2;
 const STROKE_GAP = 2;
@@ -7,7 +9,7 @@ const SIDE_GAP = 50;
 
 class Board {
 	constructor(width, height) {
-		this.layer = new Konva.Layer();
+		this.layer = new konva.Layer();
 
 		this.tiles = []
 		for (let sideNumber = 0; sideNumber < 2; sideNumber++) {
@@ -36,12 +38,12 @@ class Board {
 
 class Tile {
 	constructor(x, y, column, row) {
-		this.group = new Konva.Group({
+		this.group = new konva.Group({
 			x: x,
 			y: y
 		});
 
-		const hexagon = new Konva.RegularPolygon({
+		const hexagon = new konva.RegularPolygon({
 			sides: 6,
 			radius: HEX_RADIUS - (STROKE_WIDTH / 2) - (STROKE_GAP / 2),
 			stroke: "black",
@@ -62,7 +64,7 @@ class Tile {
 			// socket.emit('stopFocusTile', this.col, this.row, this.side);
 		});
 
-		const coordinateLabel = new Konva.Text({
+		const coordinateLabel = new konva.Text({
 			text: "x:" + column + " y:" + row,
 			fontSize: 12,
 			fontFamily: "Calibri",
@@ -91,3 +93,5 @@ function getTileXPosition(column, row, side, boardWidth) {
 function getTileYPosition(row) {
 	return (1.5 * HEX_RADIUS * row) + HEX_RADIUS;
 }
+
+module.exports = Board;

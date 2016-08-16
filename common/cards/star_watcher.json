@@ -1,0 +1,8 @@
+{
+    "name": "Star Watcher",
+    "type": "creature",
+    "cost": 3,
+    "attack": 2,
+    "countdown": 2,
+    "health": 4
+}

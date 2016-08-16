@@ -1,0 +1,15 @@
+{
+    "name": "gotf-client",
+    "version": "0.0.1",
+    "dependencies": {
+        "konva": "*",
+        "socket.io-client": "*"
+    },
+    "devDependencies": {
+        "webpack": "*",
+        "webpack-dev-server": "*"
+    },
+    "scripts": {
+        "debug": "webpack-dev-server"
+    }
+}

@@ -1,9 +1,0 @@
-{
-    "name": "gotf",
-    "version": "0.0.1",
-    "dependencies": {
-        "hapi": "*",
-        "inert": "*",
-        "socket.io": "*"
-    }
-}
