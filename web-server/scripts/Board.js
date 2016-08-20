@@ -21,8 +21,14 @@ class Board {
 				for (let columnNumber = 0; columnNumber < width; columnNumber++) {
 					const x = getTileXPosition(columnNumber, rowNumber, sideNumber, width);
 					const y = getTileYPosition(rowNumber);
-
-					const tile = new Tile(x, y, columnNumber, rowNumber);
+					
+					//mirror column number on right side
+					var translatedColumnNumber = columnNumber;
+					if(sideNumber == 1) {
+						translatedColumnNumber = width - 1 - columnNumber;
+					}
+					
+					const tile = new Tile(x, y, translatedColumnNumber, rowNumber);
 
 					row.push(tile);
 					this.layer.add(tile.group);
