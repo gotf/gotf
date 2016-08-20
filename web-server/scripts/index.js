@@ -11,7 +11,7 @@ const stage = new konva.Stage({
     height: 700
 });
 
-const board = new Board(3, 3);
+const board = new Board(3, 5);
 stage.add(board.layer);
 
 // force the stage to redraw 60 times every second, but no more

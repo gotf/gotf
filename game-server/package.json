@@ -1,7 +1,7 @@
 {
     "name": "gotf-common",
     "version": "0.0.1",
-    "scripts": {
-        "debug": "echo 'server'"
+    "dependencies": {
+        "socket.io": "*"
     }
 }
