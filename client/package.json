@@ -11,6 +11,5 @@
     },
     "scripts": {
         "debug": "webpack-dev-server",
-        "build": "webpack"
     }
 }
