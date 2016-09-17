@@ -10,6 +10,6 @@
         "inert": "*"
     },
     "scripts": {
-        "debug": "webpack-dev-server",
+        "debug": "webpack-dev-server"
     }
 }
