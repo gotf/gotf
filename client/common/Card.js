@@ -1,34 +1,34 @@
+'use strict';
+
 class Card {
 	constructor(id) {
 		this.id = id;
+		this.parseJSON();
+	}
 
-		//TODO: fix that
-		var that = this;
-		parseJSON(id, that);
+	parseJSON() {
+		const filePath = "common/cards/";
+		const self = this;
 
-		function parseJSON(id, that) {
-			let filePath = "common/cards/";
-			
-			loadJSONFile(that, filePath + id + ".json", function(data, that) {
-				const jsonObject = JSON.parse(data);
-				for(let key in jsonObject) {
-					that[key] = jsonObject[key];
-				}
-			});
-		}
+		this.loadJSONFile(filePath + this.id + ".json", function(data) {
+			const jsonObject = JSON.parse(data);
+			for(let key in jsonObject) {
+				self[key] = jsonObject[key];
+			}
+		});
+	}
 
-		function loadJSONFile(that, fileName, callback) {
-		    var xobj = new XMLHttpRequest();
-		    xobj.overrideMimeType("application/json");
-		    xobj.open('GET', fileName, true);
-		    xobj.onreadystatechange = function() {
-		        if (xobj.readyState == 4 && xobj.status == "200") {
-		        	callback(xobj.responseText, that);
-		        }
-		    }
-		    xobj.send(null);
-		}
-	}	
+	loadJSONFile(fileName, callback) {
+	    let xobj = new XMLHttpRequest();
+	    xobj.overrideMimeType("application/json");
+	    xobj.open('GET', fileName, true);
+	    xobj.onreadystatechange = function() {
+	    	if (xobj.readyState == 4 && xobj.status == "200") {
+	    		callback(xobj.responseText);
+	    	}
+	    }
+	    xobj.send(null);
+	}
 }
 
 module.exports = Card;
