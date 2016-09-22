@@ -3,8 +3,8 @@
 const socketIoClient = require('socket.io-client');
 const konva = require('konva');
 
-const Board = require('./Board.js');
-const Card = require('../common/Card.js');
+const BoardDraw = require('./BoardDraw.js');
+const Unit = require('../../common/Unit.js');
 
 var socket = socketIoClient('http://localhost:62822');
 
@@ -14,9 +14,9 @@ const stage = new konva.Stage({
     height: 700
 });
 
-const board = new Board(3, 5);
-stage.add(board.layer);
-const card = new Card("star_watcher");
+const boardDraw = new BoardDraw(3, 5);
+stage.add(boardDraw.layer);
+const unit = new Unit("star_watcher");
 
 
 // force the stage to redraw 60 times every second, but no more

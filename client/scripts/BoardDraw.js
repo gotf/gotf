@@ -1,17 +1,19 @@
 'use strict';
 
 const konva = require('konva');
+const Board = require('../../common/Board.js');
 
 const HEX_RADIUS = 52;
 const STROKE_WIDTH = 2;
 const STROKE_GAP = 2;
 const SIDE_GAP = 50;
 
-class Board {
-	constructor(width, height) {
+class BoardDraw extends Board{
+	constructor(width = 3, height = 5) {
+		super(width, height);
 		this.layer = new konva.Layer();
 
-		this.tiles = []
+		this.tiles = [];
 		for (let sideNumber = 0; sideNumber < 2; sideNumber++) {
 			const side = [];
 
@@ -100,4 +102,4 @@ function getTileYPosition(row) {
 	return (1.5 * HEX_RADIUS * row) + HEX_RADIUS;
 }
 
-module.exports = Board;
+module.exports = BoardDraw;
