@@ -23,13 +23,13 @@ class BoardDraw extends Board{
 				for (let columnNumber = 0; columnNumber < width; columnNumber++) {
 					const x = getTileXPosition(columnNumber, rowNumber, sideNumber, width);
 					const y = getTileYPosition(rowNumber);
-					
-					//mirror column number on right side
+
+					// mirror column number on right side
 					var translatedColumnNumber = columnNumber;
-					if(sideNumber == 1) {
+					if (sideNumber === 1) {
 						translatedColumnNumber = width - 1 - columnNumber;
 					}
-					
+
 					const tile = new Tile(x, y, translatedColumnNumber, rowNumber);
 
 					row.push(tile);
@@ -83,7 +83,7 @@ class Tile {
 }
 
 function getTileXPosition(column, row, side, boardWidth) {
-	const rowIsShifted = !(row % 2) !== !(side % 2); // shifted row alternates by row number and side
+	const rowIsShifted = row % 2 !== side % 2; // shifted row alternates by row number and side
 	const tileWidth = Math.sqrt(3) * HEX_RADIUS;
 	const sideOffset = tileWidth * (boardWidth + 0.5) + SIDE_GAP - STROKE_GAP;
 

@@ -1,4 +1,4 @@
-{
+module.exports = {
     "name": "Star Watcher",
     "type": "creature",
     "rarity": 0,
