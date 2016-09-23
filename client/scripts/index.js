@@ -4,7 +4,7 @@ const socketIoClient = require('socket.io-client');
 const konva = require('konva');
 
 const BoardDraw = require('./BoardDraw.js');
-const Unit = require('../../common/Unit.js');
+const Unit = require('../../common/UnitCard.js');
 
 var socket = socketIoClient('http://localhost:62822');
 

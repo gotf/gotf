@@ -1,8 +1,6 @@
 'use strict';
 
-const Side = {
-	LEFT: 0,
-	RIGHT: 1
+module.exports = {
+	"Side": {"LEFT": 0, "RIGHT": 1},
+	"Rarity": {"COMMON": 0, "RARE": 1, "EPIC": 2}
 };
-
-module.exports = Side;

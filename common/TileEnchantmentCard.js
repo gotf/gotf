@@ -2,10 +2,10 @@
 
 const Card = require('./Card.js');
 
-class Unit extends Card {
+class TileEnchantmentCard extends Card {
 	constructor(id) {
 		super(id);
 	}
 }
 
-module.exports = Unit;
+module.exports = TileEnchantmentCard;
